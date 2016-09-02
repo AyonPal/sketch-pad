@@ -1,4 +1,5 @@
 var h=20;
+var text="Enter number of row: "
 $(document).ready(function() {
 	makeGrid(h)
 	showColor(getRandomColor());
@@ -77,12 +78,12 @@ function showTrail(){
 	$('li').hover(function(){
 		$(this).css({opacity:'0'});		
 	}, function(){
-		$(this).fadeTo('fast', 1)
+		$(this).fadeTo('slow', 1)
 	});
 
 }
 function showOpacity(){
-	$('li').hover(function(){
+	$('li').mouseenter(function(){
 		var opt = $(this).css('opacity')-0.1;
 		$(this).css({opacity:opt});	
 	});
@@ -103,13 +104,13 @@ function getRandomColor() {
 
 
 function getRow(){
-	text="Enter number of row: "
 	i=prompt(text);
-	if (i>100){
-		text="Row must be less than 100!"
+	if (i>100||i<2){
+		text="Row must be less than 100, greater than 1!"
 		getRow();
 	}
 	else{
+		text="Enter number of row: "
 		return i;
 	}
 }
