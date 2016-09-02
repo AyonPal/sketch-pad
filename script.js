@@ -35,7 +35,7 @@ function makeGrid(rownum){
 		h = rownum;
 	}
 	else{
-		h = getRow();
+		getRow();
 	}
 	$('.container').remove();
 	$('.main').append('<div class="container"></div>')
@@ -111,6 +111,6 @@ function getRow(){
 	}
 	else{
 		text="Enter number of row: "
-		return i;
+		h= i;
 	}
 }
